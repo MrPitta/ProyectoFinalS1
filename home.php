@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('db.php');
+include('bd/db.php');
 
 
 ?>
@@ -202,10 +202,11 @@ include('db.php');
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
-
+                <?php echo($_SESSION["avifecha"])?>
                 <!-- /.container-fluid -->
 
             </div>
+            
             <!-- End of Main Content -->
 
             <!-- Footer -->

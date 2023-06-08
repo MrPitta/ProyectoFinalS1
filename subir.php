@@ -11,7 +11,7 @@ if(isset($_POST['publicar'])){
         VALUES ('$avifecha','$avititulo','$avidescripcion', '$usuid')";
         $resultado=mysqli_query($conexion,$consulta);
         if($resultado){
-            header("location:subirfoto.php");
+            header("location:home.php");
         }else{
             ?>
         <?php
