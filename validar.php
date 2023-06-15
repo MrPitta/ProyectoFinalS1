@@ -4,17 +4,15 @@ $usupassword=$_POST['usupassword'];
 
 include('bd/db.php');
 
-$consulta="SELECT*FROM avisos and SELECT*FROM usuarios where usuemail='$usuemail' and usupassword='$usupassword'";
-$resultado=mysqli_query($conexion,$consulta,);
+$consulta="SELECT*FROM usuarios where usuemail='$usuemail' and usupassword='$usupassword'";
+$resultado=mysqli_query($conexion,$consulta);
 if($guardado=$filas=mysqli_fetch_array($resultado)){
     $nombre=$guardado["usunombre"];
-    $avifecha=$guardado["avifecha"];
     $apellido=$guardado["usuapellido"];
     $email=$guardado["usuemail"];
     $contraseña=$guardado["usupassword"];
     $usuid=$guardado["id"];
     session_start();
-    $_SESSION['avifecha']=$avifecha;
     $_SESSION['email']=$email;
     $_SESSION['nombre']=$nombre;
     $_SESSION['apellido']=$apellido;
@@ -27,4 +25,4 @@ if($guardado=$filas=mysqli_fetch_array($resultado)){
     include("login!.html");
 }
 mysqli_free_result($resultado);
-mysqli_close($conexion); ?>
+mysqli_close($conexion);

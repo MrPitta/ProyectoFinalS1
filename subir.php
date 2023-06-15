@@ -1,5 +1,5 @@
 <?php
-include("db.php");
+include("bd/db.php");
 
 if(isset($_POST['publicar'])){
 

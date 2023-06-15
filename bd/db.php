@@ -1,4 +1,4 @@
 <?php
 
-$conexion=mysqli_connect("localhost","root","","ulaforo");
+$conexion=mysqli_connect("localhost","root","","ula_foro");
 ?>
