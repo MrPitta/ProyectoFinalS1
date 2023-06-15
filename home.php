@@ -8,14 +8,14 @@ include('bd/db.php');
 <html lang="es">
 
 <head>
-    <link rel="shortcut icon" href="img1/Dogo-logo-dogostore.png" type="image/x-icon">
+    <link rel="icon" href="img/logo01.1.png" type="image/png">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Dogo Avisos</title>
+    <title>ForoUlagos</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -25,6 +25,7 @@ include('bd/db.php');
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    
 
 </head>
 
@@ -202,7 +203,13 @@ include('bd/db.php');
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
-                <?php echo($_SESSION["avifecha"])?>
+                <?php include "bd/Conexion.php";
+
+                $sql = $conn->query("SELECT * FROM avisos");
+                while($row = $sql->fetch_array()){
+                    echo $row['avidescripcion']."<br>".$row["usuarios_id"]."<br><br>";
+                }
+                ?>
                 <!-- /.container-fluid -->
 
             </div>

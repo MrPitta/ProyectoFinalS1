@@ -1,85 +1,83 @@
 <!DOCTYPE html>
-<html lang="es">
-
+<html lang="en">
 <head>
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>Login</title>
-
-    <!-- Custom fonts for this template-->
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
-
-    <!-- Custom styles for this template-->
-    <link href="css/sb-admin-2.min.css" rel="stylesheet">
-
+    <title>Hash Techie Official</title>
+    <link rel="stylesheet" href="css/login.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 </head>
-
-<body class="bg-gradient-primary">
-
+<body>
+    <!-- Codigo del Logo -->
+    <div class="background"></div>
     <div class="container">
-
-        <!-- Outer Row -->
-        <div class="row justify-content-center">
-
-            <div class="col-xl-10 col-lg-12 col-md-9">
-
-                <div class="card o-hidden border-0 shadow-lg my-5">
-                    <div class="card-body p-0">
-                        <!-- Nested Row within Card Body -->
-                        <div class="row">
-                            <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
-                            <div class="col-lg-6">
-                                <div class="p-5">
-                                    <div class="text-center">
-                                        <div class="alert alert-warning">Error en la autentificacion</div>
-                                        <h1 class="h4 text-gray-900 mb-4">Bienvenido de vuelta!</h1>
-                                    </div>
-                                    <form action="validar.php" method="post" class="user">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control form-control-user"
-                                                name="usuemail" aria-describedby="emailHelp"
-                                                placeholder="Correo electronico">
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="password" class="form-control form-control-user"
-                                                name="usupassword" placeholder="Contraseña">
-                                        </div>
-                                        <input type="submit" class="btn btn-primary btn-user btn-block" value="Iniciar sesion">
-                                    </form>
-                                    <hr>
-                                    <div class="text-center">
-                                        <a class="small" href="register.html">Registrarse!</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
+        <div class="item">
+            <h2 class="logo"><i class="bi bi-megaphone"></i> ForoUlagos</h2>
+            <div class="text-item">
+                <h2>Bienvenido! <br><span>
+                    Disfruta del ForoWeb!
+                </span></h2>
+                <p>Aqui puedes hacer tus consultas sobre la Univercidad</p>
             </div>
-
         </div>
+        <div class="login-section">
+            <div class="form-box login">
+                <form action="validar.php" method="post" class="user">
+                    <h2>Ingresar</h2>
+                    <center><div class="alert alert-warning"><h5 style="color: rgb(231, 17, 17);">Error en la autentificacion</h5></div> </center>
+                    <div class="input-box">
+                        <span class="icon"><i class='bx bxs-envelope'></i></span>
+                        <input type="text" class="form-control form-control-user" name="usuemail" aria-describedby="emailHelp" placeholder="Email" required>
+                        <label >Email</label>
+                    </div>
+                    <div class="input-box">
+                        <span class="icon"><i class='bx bxs-lock-alt' ></i></span>
+                        <input type="password" class="form-control form-control-user" name="usupassword" placeholder="Clave" required>
+                        <label>Clave</label>
+                    </div>
+                    <div class="remember-password">
+                        <label for=""><input type="checkbox">Recuerda</label>
+                        <a href="#">Olvidaste tu clave</a>
+                    </div>
+                    <input type="submit" class="btn btn-primary btn-user btn-block" value="Iniciar sesion">
+                    <div class="create-account">
+                        <p>Crear una cuenta nueva? <a href="#" class="register-link">Registro</a></p>
+                    </div>
+                </form>
+            </div>
+            <div class="form-box register">
+                <form action="">
 
+                    <h2>Registro</h2>
+
+                    <div class="input-box">
+                        <span class="icon"><i class='bx bxs-user'></i></span>
+                        <input type="text" required>
+                        <label >Nombre de Usuario</label>
+                    </div>
+                    <div class="input-box">
+                        <span class="icon"><i class='bx bxs-envelope'></i></span>
+                        <input type="email" required>
+                        <label >Email</label>
+                    </div>
+                    <div class="input-box">
+                        <span class="icon"><i class='bx bxs-lock-alt' ></i></span>
+                        <input type="password" required>
+                        <label>Clave</label>
+                    </div>
+                    <div class="remember-password">
+                        <label for=""><input type="checkbox">Estoy de acuerdo con los terminos y condiciones</label>
+                    </div>
+                    <button class="btn">Ingreso</button>
+                    <div class="create-account">
+                        <p>Tienes una cuenta? <a href="#" class="login-link">Ingresa</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
+     <!-- SIGN UP FORM CREATION -->
 
-    <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
-    <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin-2.min.js"></script>
-
+    <script src="js/login.js"></script>
 </body>
 
 </html>
