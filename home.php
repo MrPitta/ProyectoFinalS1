@@ -84,7 +84,7 @@ include('bd/db.php');
                 </div>
             </li>
 
-            
+                        
 
             <!-- Divider -->
             <hr class="sidebar-divider">
@@ -107,6 +107,7 @@ include('bd/db.php');
                     <p class="text-center mb-2"><strong>PUBLIQUE UN AVISO</strong> más rapido que nunca con el acceso directo!</p>
                 <a class="btn btn-success btn-sm" href="subiraviso.php">Publicar aviso!</a>
             </div>
+            
 
         </ul>
         <!-- End of Sidebar -->
@@ -203,15 +204,31 @@ include('bd/db.php');
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
+<<<<<<< HEAD
+<<<<<<< HEAD
+                <?php include "bd/conexion.php";
+
+                $sql = $conn->query("SELECT * FROM consulta");
+                while($row = $sql->fetch_array()){
+                    echo $row['hora']."<br>".$row['descripcion']."<br>".$row["usuario_id"]."<br><br>";
+=======
                 <?php include "bd/Conexion.php";
 
                 $sql = $conn->query("SELECT * FROM avisos");
                 while($row = $sql->fetch_array()){
                     echo $row['avidescripcion']."<br>".$row["usuarios_id"]."<br><br>";
+>>>>>>> 75c84333a49c5757432f793ce3cc296a15b32aa4
+=======
+                <?php include "bd/Conexion.php";
+
+                $sql = $conn->query("SELECT * FROM avisos");
+                while($row = $sql->fetch_array()){
+                    echo $row['avidescripcion']."<br>".$row["usuarios_id"]."<br><br>";
+>>>>>>> 75c84333a49c5757432f793ce3cc296a15b32aa4
                 }
                 ?>
                 <!-- /.container-fluid -->
-
+                
             </div>
             
             <!-- End of Main Content -->
@@ -224,6 +241,8 @@ include('bd/db.php');
                     </div>
                 </div>
             </footer>
+
+            
             <!-- End of Footer -->
 
         </div>
@@ -273,6 +292,24 @@ include('bd/db.php');
     <!-- Page level custom scripts -->
     <script src="js/demo/chart-area-demo.js"></script>
     <script src="js/demo/chart-pie-demo.js"></script>
+    <script>
+window.addEventListener('mouseover', initLandbot, { once: true });
+window.addEventListener('touchstart', initLandbot, { once: true });
+var myLandbot;
+function initLandbot() {
+  if (!myLandbot) {
+    var s = document.createElement('script');s.type = 'text/javascript';s.async = true;
+    s.addEventListener('load', function() {
+      var myLandbot = new Landbot.Livechat({
+        configUrl: 'https://storage.googleapis.com/landbot.online/v3/H-1640758-Y5HZL9ZNIYHQJIJY/index.json',
+      });
+    });
+    s.src = 'https://cdn.landbot.io/landbot-3/landbot-3.0.0.js';
+    var x = document.getElementsByTagName('script')[0];
+    x.parentNode.insertBefore(s, x);
+  }
+}
+</script>
 
 </body>
 

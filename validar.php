@@ -4,7 +4,7 @@ $usupassword=$_POST['usupassword'];
 
 include('bd/db.php');
 
-$consulta="SELECT*FROM usuarios where usuemail='$usuemail' and usupassword='$usupassword'";
+$consulta="SELECT*FROM usuario where usuemail='$usuemail' and usupassword='$usupassword'";
 $resultado=mysqli_query($conexion,$consulta);
 if($guardado=$filas=mysqli_fetch_array($resultado)){
     $nombre=$guardado["usunombre"];
@@ -22,7 +22,7 @@ if($guardado=$filas=mysqli_fetch_array($resultado)){
 }else{
     ?>
     <?php
-    include("login!.html");
+    include("login.html");
 }
 mysqli_free_result($resultado);
 mysqli_close($conexion);

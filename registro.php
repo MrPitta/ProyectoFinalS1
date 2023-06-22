@@ -6,10 +6,10 @@ if(isset($_POST['register'])){
         $usunombre=trim($_POST['usunombre']);
         $usuapellido=trim($_POST['usuapellido']);
         $usuemail=trim($_POST['usuemail']);
-        $usupassword1=trim($_POST['usupassword1']);
-        $usupassword2=trim($_POST['usupassword2']);
+        $usupassword1=md5($_POST['usupassword1']);
+        $usupassword2=md5($_POST['usupassword2']);
         if ($usupassword1 == $usupassword2){
-            $consulta="INSERT INTO usuarios(usuemail, usunombre, usuapellido, usupassword) 
+            $consulta="INSERT INTO usuario(usuemail, usunombre, usuapellido,usupassword) 
             VALUES ('$usuemail','$usunombre','$usuapellido','$usupassword1')";
             $resultado=mysqli_query($conexion,$consulta);
             if($resultado){
@@ -17,10 +17,10 @@ if(isset($_POST['register'])){
             }else{
                 ?>
             <?php
-            include("register!.html");
+            include("register.html");
             }
         }else{
-            include("register!.html");
+            include("register.html");
         }
     }
 
